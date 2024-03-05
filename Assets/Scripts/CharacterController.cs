@@ -6,8 +6,12 @@ using UnityEngine.InputSystem;
 
 public class CharacterController : MonoBehaviour
 {
+    [SerializeField] private float hoverHeight;
+    [SerializeField] private float hoverSpringStrength;
+    [SerializeField] private float hoverSpringDamper;
     [SerializeField] private float jumpHeight; 
     [SerializeField] private float moveSpeed;
+
     Rigidbody rb;
 
     bool isGrounded;
@@ -30,6 +34,19 @@ public class CharacterController : MonoBehaviour
     void FixedUpdate()
     {
         
+        RaycastHit hit;
+
+        if(Physics.Raycast(transform.position, new Vector3(0,-1), out hit, hoverHeight))
+        {
+            Vector3 otherVel = Vector3.zero;
+            if (hit.rigidbody) otherVel = hit.rigidbody.velocity;
+
+            float relVel = Vector3.Dot(new Vector3(0, -1), rb.velocity) - Vector3.Dot(new Vector3(0, -1), otherVel);
+
+            float hoverDistLeft = hit.distance - hoverHeight;
+            float springForce = (hoverDistLeft * hoverSpringStrength) - (relVel * hoverSpringDamper);
+
+        }
     }
     public void Move(Vector3 direction)
     {

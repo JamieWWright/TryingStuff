@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{0A77EA6F-7B4B-C53E-0BE9-C42428AA33C1}</ProjectGuid>
+    <ProjectGuid>{B4B7016C-CA8F-9AC5-B779-692717C3352E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -57,10 +57,10 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\PlayerInput\PlayerInput.cs" />
-    <Compile Include="Assets\Scripts\PlayerInput\InputManager.cs" />
     <Compile Include="Assets\Scripts\CharacterController.cs" />
     <Compile Include="Assets\Scripts\followTarget.cs" />
+    <Compile Include="Assets\Scripts\PlayerInput\PlayerInput.cs" />
+    <Compile Include="Assets\Scripts\PlayerInput\InputManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
